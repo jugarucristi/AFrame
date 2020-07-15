@@ -1,14 +1,38 @@
+<!DOCTYPE>
 <html>
   <head>
     <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
- </head>
+  </head>
   <body>
-    <a-scene>
-      <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
-      <a-sphere position="0 1.25 -5" radius="1.25" color="#F4CAFA"></a-sphere>
-      <a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#63ff14"></a-cylinder>
-      <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
-      <a-sky color="#ECECEC"></a-sky>
-    </a-scene>
+      <a-scene>
+
+        <a-sky src="https://live.staticflickr.com/65535/50100146928_9828c45142_k.jpg"></a-sky>
+
+        <a-light type="spot" color="#ffffff" position="3 0 0" look-at="a-box"></a-light>
+        <a-light type="spot" color="#00fff" position="-3 0 0" look-at="a-box"></a-light>
+
+
+
+        <a-box width="2" height="1" depth="0"
+               sound="volume:50; src: url(sound/song.mp3);  on: click; "
+               position="0 3 -4"
+               rotation="45 45 45"
+               scale="1 2.5 1"
+               src="https://threejsfundamentals.org/threejs/resources/images/wall.jpg"
+               animation="property: rotation; to: 0 180 360; dur: 10000; easing: linear; loop: true; startEvents: click; ">
+               <!--<a-event name="mouseenter" scale="4 1 6"></a-event>-->
+               <!--<a-animation atribute="rotation" repeat="indefinite" to="0 360 0"></a-animation>-->
+        </a-box>
+
+
+
+        <a-camera position="0 7 5">
+          <a-entity cursor="fuse: true; fuseTimeout: 2000"
+            position="0 0 -1"
+            geometry="primitive: ring; radiusInner: 0.025; radiusOuter: 0.03"
+            material="color: #49FF00; shader: flat">
+        </a-camera>
+
+      </a-scene>
   </body>
 </html>
